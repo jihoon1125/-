@@ -1,7 +1,7 @@
 # 지역별 환자 관리 프로그램
 
 BST와 heap을 활용하여 지역별 환자 정보를 확인하고 갱신하는 프로그램이다.
-자세한 정보는 [스펙문서](Project_Spec_document.pdf) 참조
+프로젝트 개요는 [스펙문서](Project_Spec_document.pdf) 참조
 
 ---
 
