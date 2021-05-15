@@ -133,7 +133,8 @@ location을 반환하여 location_maxheap에게 전달한다. 값을 전달받�
 
 ## Consideration
 
-* Ifstream.eof()함수가 어떤 경우에는 잘 동작하고 어떤 경우에는 segmentation fault 유발
- -> 본인이 진단한 문제: eof함수는 파일의 끝이냐 아니냐를 의미하는게 아니라 eof를 읽었냐 안 읽었냐로 값을 return한다. 즉 글의 맨 마지막에 개행문자를 넣지 않았다면 eof까지 읽어들여서 참의 값을 반환할 것이다. 그러나 마지막에 개행문자를 넣었다면 개행문자까지만 읽고 eof를 읽지 않았기 때문에 다시 line을 읽어오려 할 건데 여기서 segmentation fault가 발생하게 되는 것이다.
+* Ifstream.eof()함수가 어떤 경우에는 잘 동작하고 어떤 경우에는 segmentation fault 유발했다.
+
+내가 진단한 문제: eof함수는 파일의 끝이냐 아니냐를 의미하는게 아니라 eof를 읽었냐 안 읽었냐로 값을 return한다. 즉 글의 맨 마지막에 개행문자를 넣지 않았다면 eof까지 읽어들여서 참의 값을 반환할 것이다. 그러나 마지막에 개행문자를 넣었다면 개행문자까지만 읽고 eof를 읽지 않았기 때문에 다시 line을 읽어오려 할 건데 여기서 segmentation fault가 발생하게 되는 것이다.
  
  * 소멸자 호출 시 null 인 변수도 delete될 때 문제가 없다는 점을 항상 상기하자.
